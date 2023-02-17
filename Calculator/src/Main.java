@@ -9,11 +9,11 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello! This is a command line calculator.");
         System.out.println("Please provide the first number: ");
-        int numberOne = valideteNumber(scanner.next());
+        long numberOne = valideteNumber(scanner.next());
         System.out.println("Please provide an operator.");
         char operator = validateOperator(scanner.next().charAt(0));
         System.out.println("Please provide the second number: ");
-        int numberTwo = valideteNumber(scanner.next());
+        long numberTwo = valideteNumber(scanner.next());
         calculate(numberOne, numberTwo, operator);
     }
 
@@ -31,7 +31,7 @@ public class Main {
         return operator;
     }
 
-    private static void calculate(int numberOne, int numberTwo, char operator) {
+    private static void calculate(long numberOne, long numberTwo, char operator) {
         if (operator == '+') {
             System.out.println("Result : " + (numberOne + numberTwo));
         } else if (operator == '-') {
@@ -41,16 +41,16 @@ public class Main {
         } else if (operator == '*') {
             System.out.println(numberOne * numberTwo);
         } else if (operator == '^') {
-            System.out.println("Result : " + (int) Math.pow((double) numberOne, (double) numberTwo));
+            System.out.println("Result : " + (long) Math.pow((double) numberOne, (double) numberTwo));
         }
     }
 
-    private static int valideteNumber(String inputOne) {
+    private static long valideteNumber(String inputOne) {
         boolean isValid = false;
-        int numberOne = 0;
+        long numberOne = 0;
         while (!isValid) {
             try {
-                numberOne = Integer.parseInt(inputOne);
+                numberOne = Long.parseLong(inputOne);
                 isValid = true;
             } catch (NumberFormatException e) {
                 System.out.println("It is not a number. Please enter a number");
