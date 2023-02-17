@@ -48,4 +48,19 @@ public class Calculator {
         }
         return numberOne;
     }
+
+    public long calculateWithReturn(long numberOne, long numberTwo, char operator) {
+        if (operator == '+') {
+            return  numberOne + numberTwo;
+        } else if (operator == '-') {
+            return numberOne - numberTwo;
+        } else if (operator == '/') {
+            return (long) ((double)numberOne / numberTwo);
+        } else if (operator == '*') {
+            return numberOne * numberTwo;
+        } else if (operator == '^') {
+            return (long) Math.pow((double) numberOne, (double) numberTwo);
+        }
+        return 0;
+    }
 }
